@@ -1,19 +1,17 @@
-﻿const webpack = require('webpack');
-const CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
-const UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
+﻿const path = require('path');
 
 module.exports = {
-    devtool: 'source-map',
-    entry: {
-        'app': './src/app/app.component'
-    },
-    output: {
-        path: __dirname + "/dist",
-        filename: "[name].js",
-        publicPath: "dist/"
-    },
     resolve: {
-        extensions: ['.ts', '.js', '.jpg', '.jpeg', '.gif', '.png', '.css', '.html']
+        extensions: ['.ts', '.js'],
+        alias: {
+            'router': path.resolve('../router/dist/index.js')
+        }        
+    },
+    entry: './src/app/app.component.ts',
+    output: {
+        path: path.join(process.cwd(), 'dist'),
+        publicPath: 'dist/',
+        filename: "bundle.js"
     },
     module: {
         loaders: [
@@ -24,8 +22,5 @@ module.exports = {
             { test: /\.html$/, loaders: ['html-loader'] },
             { test: /\.ts$/, loaders: ['awesome-typescript-loader'], exclude: /node_modules/ }
         ]
-    },
-    plugins: [
-        //new UglifyJsPlugin()
-    ]
+    }
 };

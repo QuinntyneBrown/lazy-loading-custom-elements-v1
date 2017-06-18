@@ -1,6 +1,6 @@
 import "./shared/header.component";
 
-import { RouterOutlet } from "./router";
+import { RouterOutlet } from "router";
 
 declare var System: any;
 

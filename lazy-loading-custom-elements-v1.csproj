@@ -110,20 +110,6 @@
     <TypeScriptCompile Include="src\app\home\home-page.component.ts">
       <DependentUpon>home-page.component.html</DependentUpon>
     </TypeScriptCompile>
-    <TypeScriptCompile Include="src\app\router\camel-case-to-snake-case.ts" />
-    <TypeScriptCompile Include="src\app\router\constants.ts" />
-    <TypeScriptCompile Include="src\app\router\environment.ts" />
-    <TypeScriptCompile Include="src\app\router\index.ts" />
-    <TypeScriptCompile Include="src\app\router\is-array.ts" />
-    <TypeScriptCompile Include="src\app\router\is-numeric.ts" />
-    <TypeScriptCompile Include="src\app\router\link.component.ts" />
-    <TypeScriptCompile Include="src\app\router\route-reload-middleware.ts" />
-    <TypeScriptCompile Include="src\app\router\route.ts" />
-    <TypeScriptCompile Include="src\app\router\router-middleware.ts" />
-    <TypeScriptCompile Include="src\app\router\router-outlet.ts" />
-    <TypeScriptCompile Include="src\app\router\router.d.ts" />
-    <TypeScriptCompile Include="src\app\router\router.ts" />
-    <TypeScriptCompile Include="src\app\router\storage.ts" />
     <TypeScriptCompile Include="src\app\shared\header.component.ts">
       <DependentUpon>header.component.html</DependentUpon>
     </TypeScriptCompile>

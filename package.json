@@ -17,8 +17,5 @@
     "sass-loader": "6.0.5",
     "typescript": "2.3.4",
     "webpack": "2.5.1"
-  },
-  "dependencies": {
-    "webpack": "^3.0.0-rc.2"
   }
 }

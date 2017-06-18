@@ -1,1 +1,0 @@
-﻿export const STORAGE_KEY = "[Router] storage key";
