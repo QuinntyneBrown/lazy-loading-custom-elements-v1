@@ -1,9 +1,27 @@
 :host {
-    display:block;
+    display:inline-block;
     contain:content;
+
+    
 
     * {
         margin:0;
         padding:0;
+    }
+
+    width:100%;
+    max-width:1280px;
+    margin:0 auto;
+
+    height:70px;
+
+    h1 {
+        font-weight:100;
+        display:inline-block;
+        padding-right:40px;
+    }
+
+    ce-link {
+        padding-right:20px;
     }
 }

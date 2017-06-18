@@ -1,5 +1,5 @@
 {
-  "name": "dynamic-imports",
+  "name": "lazy-loading-custom-elements-v1",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
