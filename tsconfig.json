@@ -16,7 +16,8 @@
     "baseUrl": ".",
     "suppressImplicitAnyIndexErrors": true,
     "paths": {
-      "router": [ "../router/dist/index.d.ts" ]
+      "router": [ "../router/dist/index.d.ts" ],
+      "simple-custom-element": [ "../simple-custom-element/dist/index.d.ts" ]
     }
   }
 }

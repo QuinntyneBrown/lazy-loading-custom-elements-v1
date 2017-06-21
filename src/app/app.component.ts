@@ -1,8 +1,15 @@
 import "./shared/header.component";
-
 import { RouterOutlet } from "router";
+import { SimpleComponent } from "simple-custom-element";
+
+const importedElements = [SimpleComponent];
 
 declare var System: any;
+
+const assets = Promise.all([
+    System.import("./app.component.html"),
+    System.import("./app.component.scss"),
+]);
 
 export class AppRouterOutletComponent extends RouterOutlet {
     constructor(el: HTMLElement) {
@@ -34,14 +41,11 @@ export class AppComponent extends HTMLElement {
     }
 
     async connectedCallback() {
-
-        const assets = await Promise.all([
-            System.import("./app.component.html"),
-            System.import("./app.component.scss"),
-        ]);
+        
+        var results = await assets;
 
         const template = document.createElement("template");
-        template.innerHTML = `<style>${assets[1]}</style>${assets[0]}`
+        template.innerHTML = `<style>${results[1]}</style>${results[0]}`
 
         this.attachShadow({ mode: 'open' });
         this.shadowRoot.appendChild(document.importNode(template.content, true));

@@ -1,5 +1,6 @@
 declare var System: any;
 
+
 export class HomePageComponent extends HTMLElement {
     constructor() {
         super();
@@ -9,14 +10,19 @@ export class HomePageComponent extends HTMLElement {
         return [];
     }
 
-    async connectedCallback() {
-        const assets = await Promise.all([
+    async connectedCallback() {   
+        const homeAssets = Promise.all([
             System.import("./home-page.component.html"),
             System.import("./home-page.component.scss"),
         ]);
+             
+        var results = await homeAssets;
+
+
+
 
         const template = document.createElement("template");
-        template.innerHTML = `<style>${assets[1]}</style>${assets[0]}`
+        template.innerHTML = `<style>${results[1]}</style>${results[0]}`;
 
         this.attachShadow({ mode: 'open' });
         this.shadowRoot.appendChild(document.importNode(template.content, true));  

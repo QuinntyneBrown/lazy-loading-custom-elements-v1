@@ -4,7 +4,8 @@ module.exports = {
     resolve: {
         extensions: ['.ts', '.js'],
         alias: {
-            'router': path.resolve('../router/dist/index.js')
+            'router': path.resolve('../router/dist/index.js'),
+            'simple-custom-element': path.resolve('../simple-custom-element/dist/index.js')
         }        
     },
     entry: './src/app/app.component.ts',

@@ -1,5 +1,7 @@
 declare var System: any;
 
+
+
 export class AboutPageComponent extends HTMLElement {
     constructor() {
         super();
@@ -10,13 +12,16 @@ export class AboutPageComponent extends HTMLElement {
     }
 
     async connectedCallback() {
-        const assets = await Promise.all([
+
+        const assets = Promise.all([
             System.import("./about-page.component.html"),
             System.import("./about-page.component.scss"),
         ]);
 
+        var results = await assets;
+
         const template = document.createElement("template");
-        template.innerHTML = `<style>${assets[1]}</style>${assets[0]}`
+        template.innerHTML = `<style>${results[1]}</style>${results[0]}`;
 
         this.attachShadow({ mode: 'open' });
         this.shadowRoot.appendChild(document.importNode(template.content, true));  
